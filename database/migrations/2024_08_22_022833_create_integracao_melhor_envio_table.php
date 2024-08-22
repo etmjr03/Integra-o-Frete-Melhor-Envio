@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('integracao_melhor_envio', function (Blueprint $table) {
+        Schema::create('integracao_melhor_envios', function (Blueprint $table) {
             $table->id();
             $table->string('endpoint');
-            $table->string('token');
+            $table->longText('token');
+            $table->string('email');
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioMelhorEnvioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login.login');
-});
+Route::get('/',[UsuarioMelhorEnvioController::class, 'getInformacoesUsuarioMelhorEnvio'] )->name('home');
 
 //PAINEL
 Route::prefix('produto')->group(function(){
