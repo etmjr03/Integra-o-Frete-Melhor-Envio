@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class IntegracaoMelhorEnvioController extends Controller
 {
     /**
-     * @method responsável por retornar o layout do login
+     * @method responsável por retornar as informações da integração
      * @return array de informações da integração
      */
     public static function getInformacoesIntegracao(){
