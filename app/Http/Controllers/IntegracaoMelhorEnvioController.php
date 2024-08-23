@@ -26,6 +26,12 @@ class IntegracaoMelhorEnvioController extends Controller
      */
     public static function executarRequisicao($metodo, $uri = null, $body = null){
         $obInformacoesMelhorEnvio = self::getInformacoesIntegracao();
+        $header = [
+            "Accept: application/json",
+            "Content-Type: application/json",
+            "Authorization: Bearer ".$obInformacoesMelhorEnvio['token'],
+            "User-Agent: Aplicação ".$obInformacoesMelhorEnvio['email']
+        ];
 
         $curl = curl_init();
 
@@ -34,12 +40,9 @@ class IntegracaoMelhorEnvioController extends Controller
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_SSL_VERIFYHOST => false,
-        CURLOPT_CUSTOMREQUEST => $metodo,
-        CURLOPT_HTTPHEADER => [
-            "Accept: application/json",
-            "Authorization: Bearer ".$obInformacoesMelhorEnvio['token'],
-            "User-Agent: Aplicação ".$obInformacoesMelhorEnvio['email']
-        ],
+        CURLOPT_CUSTOMREQUEST  => $metodo,
+        CURLOPT_HTTPHEADER     => $header,
+        CURLOPT_POSTFIELDS     => json_encode($body),
         ]);
 
         $response = curl_exec($curl);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CotacaoFreteMelhorEnvioController;
 use App\Http\Controllers\UsuarioMelhorEnvioController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +19,9 @@ Route::get('/',[UsuarioMelhorEnvioController::class, 'getInformacoesUsuarioMelho
 
 //PAINEL
 Route::prefix('produto')->group(function(){
+    Route::get('/detalhe',[CotacaoFreteMelhorEnvioController::class, 'executarCotacaoFrete'] )->name('detalheProduto');
+
     Route::get('/listagem', function(){
         return view('produto.listagem.produto-listagem');
-    })->name('listagem');
-
-    Route::get('detalhe', function(){
-        return view('produto.detalhe.produto-detalhe');
-    })->name('detalheProduto');
+    })->name('listagemProduto');
 });

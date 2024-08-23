@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
 @section('conteudo')
-  <h1>Detalhe do produto</h1>
+  <div class="mt-3 text-light d-block">
+    <h4>Detalhe do produto</h4>
+  </div>
 @endsection
