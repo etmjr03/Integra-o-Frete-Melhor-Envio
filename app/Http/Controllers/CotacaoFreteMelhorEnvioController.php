@@ -13,7 +13,7 @@ class CotacaoFreteMelhorEnvioController extends Controller
      * @param $payload dados que serão enviados na requisição
      * @return array do body de cotação
      */
-    public static function retornarPadraoBodyCotacao(){
+    public static function retornarPadraoBodyCotacao($payload = null){
         return [
             'from' => [
                 'postal_code' => "96020360"
@@ -23,17 +23,17 @@ class CotacaoFreteMelhorEnvioController extends Controller
             ],
             'products' => [
                 [
-                'id'     => 'x',
-                'width'  => 11,
-                'height' => 17,
-                'length' => 11,
-                'weight' => 0.3,
+                'id'              => 'x',
+                'width'           => 11,
+                'height'          => 17,
+                'length'          => 11,
+                'weight'          => 0.3,
                 'insurance_value' => 10.1,
-                'quantity' => 1
+                'quantity'        => 1
                 ]
             ],
             'options' => [
-                'receipt' => false,
+                'receipt'  => false,
                 'own_hand' => false
             ],
         ];

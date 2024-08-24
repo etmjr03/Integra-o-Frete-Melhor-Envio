@@ -22,7 +22,7 @@ class IntegracaoMelhorEnvioController extends Controller
      * @param $metodo método da requisição GET, POST, PUT, DELETE
      * @param $uri uri final do endpoint /cart /balance
      * @param $body body da requisição
-     * @return object response da requisição
+     * @return object|array response da requisição
      */
     public static function executarRequisicao($metodo, $uri = null, $body = null){
         $obInformacoesMelhorEnvio = self::getInformacoesIntegracao();
