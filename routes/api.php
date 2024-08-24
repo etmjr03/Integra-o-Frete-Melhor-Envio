@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CarrinhoFreteMelhorEnvioController;
+use App\Http\Controllers\CotacaoFreteMelhorEnvioController;
+use App\Http\Controllers\PedidoFreteMelhorEnvioController;
+use App\Http\Controllers\UsuarioMelhorEnvioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('usuario')->group(function(){
+    Route::get('/', [UsuarioMelhorEnvioController::class, 'getInformacoesUsuarioMelhorEnvio'])->name('usuario');
+    Route::get('saldo', [UsuarioMelhorEnvioController::class, 'getSaldoCarteiraUsuarioMelhorEnvio'])->name('saldoUsuario');
+});
+
+Route::prefix('cotacao')->group(function(){
+    Route::post('/', [CotacaoFreteMelhorEnvioController::class, 'executarCotacaoFrete'])->name('cotacaoFrete');
+});
+
+Route::prefix('pedido')->group(function(){
+    Route::post('/', [PedidoFreteMelhorEnvioController::class, 'executarCriacaoPedidoFrete'])->name('criarPedido');
+});
+
+Route::prefix('carrinho')->group(function(){
+    Route::get('/', [CarrinhoFreteMelhorEnvioController::class, 'getFretesCarrinho'])->name('listarFretesCarrinho');
+    Route::get('/{id}', [CarrinhoFreteMelhorEnvioController::class, 'getFreteEspecificoPorIdCarrinho'])->name('listarFreteEspecificoCarrinho');
+    Route::delete('/{id}', [CarrinhoFreteMelhorEnvioController::class, 'deletarFreteEspecificoPorIdCarinho'])->name('deletarFreteEspecificoCarrinho');
 });
