@@ -14,10 +14,9 @@ class UsuarioMelhorEnvioController extends Controller
      * @return array com as informações de usuário da Melhor Envio
      */
     public static function getInformacoesUsuarioMelhorEnvio(){
-        $response['informacoesUsuario']      = IntegracaoMelhorEnvioController::executarRequisicao('GET');
-        $response['informacoesSaldoUsuario'] = self::getSaldoCarteiraUsuarioMelhorEnvio();
+        $response = IntegracaoMelhorEnvioController::executarRequisicao('GET');
 
-        return view('usuario.usuario', $response);
+        return response()->json($response);
     }
 
     /**
@@ -27,6 +26,6 @@ class UsuarioMelhorEnvioController extends Controller
     public static function getSaldoCarteiraUsuarioMelhorEnvio(){
         $response = IntegracaoMelhorEnvioController::executarRequisicao('GET', self::URI_SALDO);
 
-        return $response;
+        return response()->json($response);
     }
 }

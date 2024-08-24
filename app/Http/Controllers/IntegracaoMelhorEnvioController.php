@@ -50,6 +50,8 @@ class IntegracaoMelhorEnvioController extends Controller
 
         curl_close($curl);
 
-        return json_decode($response);
+        empty($error) ? $retorno = $response : $retorno = $error;
+
+        return json_decode($retorno);
     }
 }
