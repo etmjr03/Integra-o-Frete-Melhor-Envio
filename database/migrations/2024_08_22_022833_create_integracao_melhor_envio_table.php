@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('integracao_melhor_envios', function (Blueprint $table) {
             $table->id();
+            $table->string('hash');
             $table->string('endpoint');
             $table->longText('token');
             $table->string('email');

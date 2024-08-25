@@ -17,7 +17,10 @@ class IntegracaoMelhorEnvioFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'hash'     => 'dados-integracao',
+            'endpoint' => 'https://sandbox.melhorenvio.com.br/api/v2/me/',
+            'token'    => 'seu token aqui',
+            'email'    => 'seuemail@gmail.com'
         ];
     }
 }
