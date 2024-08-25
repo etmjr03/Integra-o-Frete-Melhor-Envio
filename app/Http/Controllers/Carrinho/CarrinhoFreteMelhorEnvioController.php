@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Carrinho;
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\Integracao\IntegracaoMelhorEnvioController;
 use Illuminate\Http\Request;
 
 class CarrinhoFreteMelhorEnvioController extends Controller
@@ -36,7 +38,7 @@ class CarrinhoFreteMelhorEnvioController extends Controller
      */
     public static function deletarFreteEspecificoPorIdCarinho(Request $request){
         $response = IntegracaoMelhorEnvioController::executarRequisicao('DELETE', self::URI_CARRINHO.'/'.$request->id);
-        isset($response->message) ? $retorno = $response->message : $retorno = ['messagem' => 'Frete removido do carrinho.'];
+        isset($response->message) ? $retorno = $response->message : $retorno = ['message' => 'Frete removido do carrinho.'];
         
         return response()->json($retorno);
     }

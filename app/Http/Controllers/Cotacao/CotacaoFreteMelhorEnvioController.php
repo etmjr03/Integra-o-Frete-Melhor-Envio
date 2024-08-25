@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cotacao;
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\Integracao\IntegracaoMelhorEnvioController;
 use Illuminate\Http\Request;
 
 class CotacaoFreteMelhorEnvioController extends Controller

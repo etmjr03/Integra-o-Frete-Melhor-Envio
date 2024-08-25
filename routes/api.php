@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\CarrinhoFreteMelhorEnvioController;
-use App\Http\Controllers\CotacaoFreteMelhorEnvioController;
-use App\Http\Controllers\PedidoFreteMelhorEnvioController;
-use App\Http\Controllers\UsuarioMelhorEnvioController;
+use App\Http\Controllers\Carrinho\CarrinhoFreteMelhorEnvioController;
+use App\Http\Controllers\Cotacao\CotacaoFreteMelhorEnvioController;
+use App\Http\Controllers\Pedido\PedidoFreteMelhorEnvioController;
+use App\Http\Controllers\Usuario\UsuarioMelhorEnvioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

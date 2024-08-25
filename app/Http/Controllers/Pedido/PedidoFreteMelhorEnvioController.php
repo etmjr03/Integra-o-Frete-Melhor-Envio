@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pedido;
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\Integracao\IntegracaoMelhorEnvioController;
 use App\Models\IntegracaoMelhorEnvio;
 use Illuminate\Http\Request;
 
