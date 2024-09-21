@@ -20,9 +20,9 @@ class IntegracaoMelhorEnvioController extends Controller
 
     /**
      * @method responsável por fazer uma requisição para a api da Melhor Envio
-     * @param $metodo método da requisição GET, POST, PUT, DELETE
-     * @param $uri uri final do endpoint /cart /balance
-     * @param $body body da requisição
+     * @param string $metodo método da requisição GET, POST, PUT, DELETE
+     * @param string $uri uri final do endpoint /cart /balance
+     * @param mixed $body body da requisição
      * @return object|array response da requisição
      */
     public static function executarRequisicao($metodo, $uri = null, $body = null){
